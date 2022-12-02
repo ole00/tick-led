@@ -6,7 +6,6 @@
 
 // pin config for WEMOS S2 mini board
 #define PIN_BUTTON 0
-#define PIN_LED 15
 #define PIN_DATA 16
 #define PIN_BOOT 14
 #define PIN_BUZZER 5
@@ -16,7 +15,6 @@
 #define PIN_SCL 35
 
 #define M_BUTTON (uint32_t) 1 << PIN_BUTTON
-#define M_LED (uint32_t) 1 << PIN_LED
 #define M_DATA (uint32_t) 1 << PIN_DATA
 #define M_BOOT (uint32_t) 1 << PIN_BOOT
 #define M_BUZZER (uint32_t) 1 << PIN_BUZZER

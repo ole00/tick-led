@@ -410,7 +410,6 @@ static void readClockConfig(void) {
 // the setup function runs once when you press reset or power the board
 void setup() {
     uint8_t i;
-    pinMode(PIN_LED, OUTPUT);
     pinMode(PIN_DATA, OUTPUT);
     pinMode(PIN_BUTTON, INPUT_PULLUP);
     pinMode(PIN_BOOT, INPUT);
@@ -1580,15 +1579,9 @@ void loop() {
                     delay(rttl.timeSlice);
                 }
                 playRttl(&rttl, false); //4ms
-                //the next rttl delay will happend during LED redraw
+                //the next rttl delay will happen during LED redraw
                 //all together total wait time is ~ 46 ms
-
-                //currentMillis = xTaskGetTickCount() - currentMillis;
-                //Serial.printf("millis = %d\r\n", currentMillis);
             } else { 
-                //currentMillis = xTaskGetTickCount() - currentMillis;
-                //Serial.printf("millis = %d\r\n", currentMillis);
-                //updateBeeper();
                 updateAcm();
                 delay(46); //~20 fps (4 mS to set the leds: 1.4 uS per bit * 24 bits per color * 134 LEDs )
             }
