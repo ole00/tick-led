@@ -20,11 +20,11 @@ The picture above lacks cotrast and does not show the vibrant colors of the LED 
 * service button to enter setup
 * options are configuarable over WiFi (web page) or serial port (command prompt)
 * supports firmware upgrades over serial port (via service button press)
-* fully open source and open hardware, it is a DYI project
 * based on ESP32 S2 Mini MCU board - widely available.
-* fully open source and open hardware. You can find the firmware souce code, pcb design
-  files (made by open source CAD software Geda PCB), case desgin files (made for open source
-  3D CAD desgin - OpenScad) and pdf schematic in this git repo.
+* fully open source and open hardware, it is a DYI project.
+  You can find the firmware souce code, pcb design files (made by open source CAD
+  software Geda PCB), case desgin files (made for open source 3D CAD desgin - OpenScad)
+  and pdf schematic in this git repo.
 
 
 **Build complexity:**
