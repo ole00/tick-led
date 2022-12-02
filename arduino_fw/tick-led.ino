@@ -1181,6 +1181,7 @@ static void handleTerminalCommand() {
         } 
     } else
     if (!strcmp("help", inputLine) || !strcmp("?", inputLine)) {
+        Serial.println("ver       : prints the FW version");
         Serial.println("exit      : exits configuration back to clock mode");
         Serial.println("reboot    : reboots tick-led");
         Serial.println("beep      : tests the beeper");
@@ -1196,6 +1197,9 @@ static void handleTerminalCommand() {
         Serial.println("date YYYYMMDDHHMM : sets UTC time YearMonthDay HoursMinutes");
         Serial.println("wifi stop : stops the wifi server");
         Serial.println("help      : shows this help text");
+    } else
+    if (!strcmp("ver", inputLine)) {
+        Serial.printf("tick-led %s\r\n", APP_VERSION);
     } else
     if (!strcmp("ntp", inputLine)) {
         exitConfigState();       
