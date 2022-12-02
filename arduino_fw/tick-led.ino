@@ -65,6 +65,8 @@
 #define MOTION_THRESHOLD 12
 
 #define ACM_INFO 0
+//~ 20 minutes (6000 is ~ 1 minute)
+#define CLOCK_CONFIG_TIMEOUT 120000;
 
 uint8_t state = STATE_INIT;
 
@@ -105,6 +107,7 @@ uint8_t forceHandAnim;    // for preview hand animation (via button press)
 uint16_t manualUndim;
 
 uint16_t randSeed; // seed for random - taken from the mac address;
+uint32_t clockConfigCounter;
 
 typedef struct ColorScheme {
     uint8_t centerR;
@@ -1038,6 +1041,7 @@ static void startClockConfig(void) {
     ledsApply();
     setupWifi();
     readSerialGarbage();
+    clockConfigCounter = CLOCK_CONFIG_TIMEOUT;
 }
 
 
@@ -1501,6 +1505,13 @@ void loop() {
                 }
                 buttonPress = 0;
                 buttonWasReleased = 1;
+
+                //auto exit after inacativity
+                clockConfigCounter--;
+                if (clockConfigCounter == 0) {
+                    exitConfigState();
+                    break;
+                }
             }
             if (COMMAND_NONE != readTerminalCommands()) {
                 handleTerminalCommand();
