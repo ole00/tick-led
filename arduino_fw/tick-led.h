@@ -2,7 +2,7 @@
 #define _TICKLED_H_
 
 
-#define APP_VERSION "ver. 0.9"
+#define APP_VERSION "ver. 1.0"
 
 // pin config for WEMOS S2 mini board
 #define PIN_BUTTON 0
